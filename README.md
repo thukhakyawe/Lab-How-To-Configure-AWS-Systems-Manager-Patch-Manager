@@ -44,3 +44,89 @@
 ### 3. Create Window Instance ###
 
 - Create Window Instance by using Window Server 2022 and wait for finished creation.
+
+![alt text](image-9.png)
+
+### 4. Attach IAM roles to Instances ###
+
+- Select `Instance` 
+    - Click `Actions`
+        - Click `Security`
+            - Click `Modify IAM role`
+
+![alt text](image-11.png)
+
+- Select `TKK-AmazonSSMManagedInstanceCore`
+    - Click `Update IAM role`
+
+![alt text](image-12.png)
+
+- Click `Stop Instance`
+
+![alt text](image-13.png)
+
+- Click `Start Instance`
+
+![alt text](image-14.png)
+
+- Follow these steps to `Linux Instance` too.
+
+### 5. Check Your Instances are appeared at System Manager
+
+- Go to `Systems Manager` 
+
+![alt text](image-15.png)
+
+- Go to `Fleet Manager`
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)
+
+- Done, You can proceed next steps.
+
+### 6. Create new patch baselines ###
+
+- In the navigation bar, type `Systems Manager` into the search box, and then select `Systems Manager`
+- In the navigation pane, select `Patch Manager`
+
+![alt text](image-18.png)
+
+
+- In the navigation pane, select `Patch Manager`, and then select `Patch baselines`
+- In Patch baselines, select `Create patch baseline`
+
+![alt text](image-19.png)
+
+
+- Name - `Linux-Ubuntu-custombaseline-TKK`
+- Description - `Custom patch baseline for Ubuntu`
+- Operating System - Select `Ubuntu`
+- Products - Select `All`
+- Compliance reporting - Select `Critical`
+- Section - Select `All`
+- Priority - Select `Important`
+- Click `Create patch baseline`
+
+![alt text](image-21.png)
+
+- In Patch baselines, select `Create patch baseline`
+- Name - `Win2022-DefenderAV-custombaseline-TKK`
+- Description - `Custom patch baseline for Window Server 2022`
+- Operating System - Select `Windows`
+- Products - Select `All`
+- Approve patches after a specified number of days - `5`
+- Classification - Select `CriticalUpdates`, `DefinitionUpdates` and `SecurityUpdates`
+- Compliance reporting - Select `Critical`
+- Severity - Select `Critical`, `Important`
+- Click `Create patch baseline`
+
+![alt text](image-22.png)
+
+- Check that you have created custombaseline for both instances.
+
+![alt text](image-23.png)
+
+### 7. Add a patch group to a patch baseline ###
+
+- In Patch baselines, search for and select `Linux-Ubuntu-custombaseline-TKK`, and then on the Actions menu, select Modify patch groups.
