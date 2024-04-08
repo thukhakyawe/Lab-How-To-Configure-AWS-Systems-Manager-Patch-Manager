@@ -127,6 +127,66 @@
 
 ![alt text](image-23.png)
 
-### 7. Add a patch group to a patch baseline ###
+
+### 7. Enable amazon EC2 OpsData source in Explorer and set up recording in AWS Config ###
+
+![alt text](image-24.png)
+
+- Click `Get started`
+
+![alt text](image-25.png)
+
+
+- Click `Enable Explorer`
+
+![alt text](image-26.png)
+
+
+### 8. Enable AWS Config
+
+- Click `Get started`
+
+![alt text](image-27.png)
+
+- Use Default Setting and Click `Next`
+
+![alt text](image-28.png)
+
+
+-Choose `EC2` and Click checkbox to select all rules
+
+![alt text](image-29.png)
+
+- Click `Next`
+
+- Click `Confirm`
+
+![alt text](image-30.png)
+
+
+![alt text](image-31.png)
+
+- Click `Create`
+
+![alt text](image-32.png)
+
+### 9. Add a patch group to a patch baseline ###
 
 - In Patch baselines, search for and select `Linux-Ubuntu-custombaseline-TKK`, and then on the Actions menu, select Modify patch groups.
+
+
+
+------------------------------------
+
+# How do you turn off AWS config #
+
+
+- 1. Turn off Recording for that region using the console
+
+- 2. Delete the Rule by going to actions, delete rule
+
+- 3. Use the AWS CLI and delete the default recording by
+
+`aws configservice delete-configuration-recorder --configuration-recorder-name default --region <region-name>`
+
+- 4. Delete the service linked role created for AWS Config
