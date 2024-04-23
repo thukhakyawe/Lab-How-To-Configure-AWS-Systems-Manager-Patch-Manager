@@ -1,4 +1,4 @@
-# How-To-Configure-AWS-Systems-Manager-Patch-Manager
+# Lab-How-To-Configure-AWS-Systems-Manager-Patch-Manager
 
 
 ### 1. Create IAM Role for System Manager Permissions ###
